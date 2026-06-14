@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SUME — Noodle &amp; Sushi Bar</title>
+<meta name="description" content="SUME — fresh woks, daily-made sushi, and ceremonial-grade matcha. Made today. Eaten today. Sue us.">
+<meta property="og:title" content="SUME — Noodle &amp; Sushi Bar">
+<meta property="og:description" content="Fresh woks, daily-made sushi, ceremonial-grade matcha. Made today, eaten today. Sue us.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Instrument+Serif:ital@1&family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --orange:#ec661c; --orange-deep:#c4500f;
+  --black:#0d0d0d; --ink:#1a1a1a;
+  --paper:#f5f1e8; --paper-warm:#efe8d6;
+  --matcha:#6a8f3a; --strawberry:#c8392f;
+  --display:'Anton',Impact,sans-serif;
+  --serif:'Instrument Serif',Georgia,serif;
+  --body:'Space Grotesk',-apple-system,sans-serif;
+  --mono:'Space Mono',ui-monospace,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--black);color:var(--paper);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+section{position:relative}
+.wrap{max-width:1280px;margin:0 auto;padding:0 32px}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;opacity:.6}
+.serif{font-family:var(--serif);font-style:italic}
+.btn{display:inline-block;font-family:var(--mono);font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  padding:14px 26px;border-radius:999px;background:var(--orange);color:var(--black);transition:transform .2s ease,background .2s ease}
+.btn:hover{transform:translateY(-2px);background:#ff7a2e}
+.btn--ghost{background:transparent;color:var(--paper);border:1px solid rgba(245,241,232,.3)}
+.btn--ghost:hover{background:rgba(245,241,232,.08)}
+
+/* ---------- NAV ---------- */
+.nav{position:sticky;top:0;z-index:50;background:rgba(13,13,13,.82);backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(245,241,232,.08)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav .brand{font-family:var(--display);font-size:26px;letter-spacing:-.02em;color:var(--orange)}
+.nav .links{display:flex;gap:30px;font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase}
+.nav .links a{opacity:.7;transition:opacity .2s}
+.nav .links a:hover{opacity:1;color:var(--orange)}
+.nav .links a.cta{opacity:1;color:var(--orange)}
+@media(max-width:760px){.nav .links{display:none}}
+
+/* ---------- HERO ---------- */
+.hero{background:var(--orange);color:var(--black);padding:70px 0 0;overflow:hidden}
+.hero__top{display:flex;justify-content:space-between;font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase}
+.hero__top .r{display:flex;gap:24px;opacity:.7}
+.hero__word{font-family:var(--display);font-size:clamp(120px,30vw,440px);line-height:.82;letter-spacing:-.02em;text-align:center;margin:10px 0 0}
+.hero__sub{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;padding:24px 0 50px}
+.hero__sub .promise{font-family:var(--serif);font-style:italic;font-size:clamp(28px,4.5vw,52px);line-height:1.05;max-width:60%}
+.hero__sub .promise em{color:var(--strawberry)}
+.hero__cta{display:flex;gap:14px;flex-wrap:wrap}
+.hero__cta .btn{background:var(--black);color:var(--orange)}
+.hero__cta .btn:hover{background:#000}
+.hero__cta .btn--ghost{background:transparent;color:var(--black);border-color:rgba(13,13,13,.35)}
+@media(max-width:760px){.hero__sub .promise{max-width:100%}}
+
+/* ---------- MARQUEE ---------- */
+.marquee{background:var(--black);color:var(--paper);overflow:hidden;border-top:1px solid rgba(245,241,232,.08);border-bottom:1px solid rgba(245,241,232,.08)}
+.marquee__track{display:inline-flex;white-space:nowrap;will-change:transform;animation:ticker 32s linear infinite}
+.marquee span{font-family:var(--display);font-size:clamp(28px,4vw,52px);text-transform:uppercase;letter-spacing:0;padding:14px 0}
+.marquee b{color:var(--orange);padding:0 26px;font-weight:400}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.marquee--orange{background:var(--orange);color:var(--black)}
+.marquee--orange b{color:var(--black)}
+
+/* ---------- STORY ---------- */
+.story{padding:110px 0;background:var(--ink)}
+.story h2{font-family:var(--display);font-size:clamp(48px,8vw,120px);line-height:.9;text-transform:uppercase;letter-spacing:-.01em}
+.story h2 .serif{color:var(--orange);text-transform:none;display:block}
+.story .grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-top:48px}
+.story p{font-size:18px;line-height:1.6;opacity:.86;margin-bottom:20px}
+.story p strong{color:var(--orange);font-weight:600}
+.story .name{font-family:var(--serif);font-style:italic;font-size:26px;color:var(--paper)}
+.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:70px}
+.timeline .step{border-top:2px solid var(--orange);padding-top:14px}
+.timeline .yr{font-family:var(--display);font-size:40px;color:var(--orange);line-height:1}
+.timeline .lbl{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;opacity:.7;margin:8px 0 6px}
+.timeline .step p{font-size:13px;line-height:1.5;opacity:.8;margin:0}
+@media(max-width:760px){.story .grid{grid-template-columns:1fr;gap:28px}.timeline{grid-template-columns:1fr 1fr;gap:24px}}
+
+/* ---------- MENU ---------- */
+.menu{padding:110px 0;background:var(--black)}
+.menu__head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;margin-bottom:10px}
+.menu__head h2{font-family:var(--display);font-size:clamp(48px,8vw,120px);line-height:.9;text-transform:uppercase}
+.menu__head .serif{color:var(--orange)}
+.menu__note{font-family:var(--serif);font-style:italic;font-size:22px;opacity:.8;max-width:520px;margin-bottom:50px}
+.menu__cols{display:grid;grid-template-columns:repeat(3,1fr);gap:48px}
+.cat__title{font-family:var(--display);font-size:34px;text-transform:uppercase;color:var(--orange)}
+.cat--sushi .cat__title{color:var(--strawberry)}
+.cat--matcha .cat__title{color:var(--matcha)}
+.cat__sub{font-family:var(--serif);font-style:italic;font-size:18px;opacity:.7;margin:2px 0 22px}
+.item{display:flex;justify-content:space-between;gap:14px;align-items:baseline;padding:14px 0;border-top:1px solid rgba(245,241,232,.1)}
+.item .n{font-size:16px;font-weight:500}
+.item .d{font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;opacity:.55;margin-top:3px}
+.item .p{font-family:var(--display);font-size:24px;color:var(--paper)}
+@media(max-width:880px){.menu__cols{grid-template-columns:1fr;gap:44px}}
+
+/* ---------- LOYALTY ---------- */
+.loyalty{padding:110px 0;background:var(--orange);color:var(--black)}
+.loyalty .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+.loyalty h2{font-family:var(--display);font-size:clamp(54px,9vw,140px);line-height:.86;text-transform:uppercase}
+.loyalty h2 .serif{text-transform:none;display:block}
+.loyalty p{font-size:18px;line-height:1.6;margin:24px 0 30px;max-width:440px}
+.loyalty .btn{background:var(--black);color:var(--orange)}
+.card{aspect-ratio:1.586/1;background:var(--black);border-radius:18px;padding:26px;color:var(--paper);
+  display:grid;grid-template-rows:auto 1fr auto;box-shadow:0 30px 60px -20px rgba(0,0,0,.5)}
+.card .top{display:flex;justify-content:space-between;font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;opacity:.75}
+.card .stamps{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;align-content:center}
+.card .slot{aspect-ratio:1/1;border:1.5px dashed rgba(245,241,232,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-family:var(--display);font-size:18px;color:rgba(245,241,232,.5)}
+.card .slot.free{border-color:var(--orange);color:var(--orange);font-size:15px;flex-direction:column;line-height:1}
+.card .slot.free em{font-family:var(--serif);font-size:9px;font-style:italic}
+.card .bot{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;opacity:.6}
+@media(max-width:880px){.loyalty .wrap{grid-template-columns:1fr;gap:40px}}
+
+/* ---------- VISIT ---------- */
+.visit{padding:110px 0;background:var(--ink)}
+.visit h2{font-family:var(--display);font-size:clamp(48px,8vw,120px);line-height:.9;text-transform:uppercase}
+.visit h2 .serif{color:var(--orange)}
+.visit .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:46px}
+.visit .blk h3{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;opacity:.6;margin-bottom:14px}
+.visit .blk p{font-size:17px;line-height:1.6}
+.visit .blk .big{font-family:var(--display);font-size:38px;color:var(--orange);line-height:1.05;text-transform:uppercase}
+.hours{font-family:var(--mono);font-size:14px;line-height:2;letter-spacing:.04em}
+.hours .day{display:flex;justify-content:space-between;border-bottom:1px solid rgba(245,241,232,.08)}
+@media(max-width:760px){.visit .grid{grid-template-columns:1fr;gap:34px}}
+
+/* ---------- FOOTER ---------- */
+.foot{background:var(--black);padding:70px 0 40px;border-top:1px solid rgba(245,241,232,.08)}
+.foot .top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:30px;align-items:flex-end}
+.foot .brand{font-family:var(--display);font-size:clamp(64px,12vw,160px);line-height:.82;color:var(--orange);letter-spacing:-.02em}
+.foot .sub{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;opacity:.6}
+.foot .links{display:flex;gap:22px;font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+.foot .links a{opacity:.7}.foot .links a:hover{opacity:1;color:var(--orange)}
+.foot .legal{margin-top:50px;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;opacity:.45;
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;border-top:1px solid rgba(245,241,232,.08);padding-top:24px}
+@media(prefers-reduced-motion:reduce){.marquee__track{animation:none}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav"><div class="wrap">
+  <a href="#top" class="brand">SUME</a>
+  <div class="links">
+    <a href="#story">Story</a>
+    <a href="#menu">Menu</a>
+    <a href="#loyalty">Loyalty</a>
+    <a href="#visit">Visit</a>
+    <a href="#visit" class="cta">Order ↗</a>
+  </div>
+</div></nav>
+
+<!-- HERO -->
+<header class="hero" id="top"><div class="wrap">
+  <div class="hero__top">
+    <span>SUME · Noodle &amp; Sushi Bar</span>
+    <span class="r"><span>Est. 2024</span><span>London</span><span>Sue Us</span></span>
+  </div>
+  <h1 class="hero__word">SUME</h1>
+  <div class="hero__sub">
+    <div class="promise">Fresh woks, daily-made sushi, and <em>ceremonial-grade matcha</em>. Made today, eaten today.</div>
+    <div class="hero__cta">
+      <a href="#menu" class="btn">See the menu</a>
+      <a href="#visit" class="btn btn--ghost">Find us</a>
+    </div>
+  </div>
+</div></header>
+
+<!-- MARQUEE -->
+<div class="marquee"><div class="marquee__track">
+  <span>MATCHA NOW<b>·</b>THINK LATER<b>·</b>ROLLED THIS MORNING<b>·</b>WOKS WORTH SUING OVER<b>·</b>CHOOSE YOUR SIDE<b>·</b>SUE US<b>·</b></span>
+  <span>MATCHA NOW<b>·</b>THINK LATER<b>·</b>ROLLED THIS MORNING<b>·</b>WOKS WORTH SUING OVER<b>·</b>CHOOSE YOUR SIDE<b>·</b>SUE US<b>·</b></span>
+</div></div>
+
+<!-- STORY -->
+<section class="story" id="story"><div class="wrap">
+  <span class="eyebrow">Origin · The Lawsuit</span>
+  <h2>One letter,<span class="serif">one pivot, one name.</span></h2>
+  <div class="grid">
+    <div>
+      <p>We were <strong>imsu</strong>. Two friends, one wok, one extremely confident plan to open a noodle &amp; sushi bar.</p>
+      <p>Then one ordinary lunchtime, a manager from a certain green-and-white rival noodle chain walked in. We thought it was a customer. It was a problem. A few weeks later: a lawsuit. <strong>Change the name</strong>, they said. Or else.</p>
+      <p>So we sat down, looked at each other, looked at our woks, and said — fine. That's how we became <strong>SUME</strong>. Pronounced like <span class="serif">sue-me</span>. The name is also the apology.</p>
+    </div>
+    <div>
+      <p class="serif" style="font-size:32px;line-height:1.2;color:var(--paper)">"Same kitchen. Same recipes. Same people. Different name. Better story."</p>
+      <p style="margin-top:24px">Made today. Eaten today. Forgotten tomorrow — until you crave it again.</p>
+      <p class="name">— The Founders</p>
+    </div>
+  </div>
+  <div class="timeline">
+    <div class="step"><div class="yr">'23</div><div class="lbl">Day One</div><p>Two friends, one wok, one confident plan — under the name <em>imsu</em>.</p></div>
+    <div class="step"><div class="yr">'24</div><div class="lbl">The Visit</div><p>A manager from a much larger green-named competitor walks in. Looks around. Leaves.</p></div>
+    <div class="step"><div class="yr">'24</div><div class="lbl">The Letter</div><p>Cease &amp; desist. Trademark infringement. We had thirty days.</p></div>
+    <div class="step"><div class="yr">NOW</div><div class="lbl">SUME</div><p>Same kitchen. Better story. Sue us. Seriously, please don't.</p></div>
+  </div>
+</div></section>
+
+<!-- MARQUEE 2 -->
+<div class="marquee marquee--orange"><div class="marquee__track">
+  <span>SUE US<b>·</b>SERIOUSLY<b>·</b>NAMED AFTER A LAWSUIT<b>·</b>WOKS WORTH SUING OVER<b>·</b></span>
+  <span>SUE US<b>·</b>SERIOUSLY<b>·</b>NAMED AFTER A LAWSUIT<b>·</b>WOKS WORTH SUING OVER<b>·</b></span>
+</div></div>
+
+<!-- MENU -->
+<section class="menu" id="menu"><div class="wrap">
+  <div class="menu__head">
+    <h2>The <span class="serif">menu.</span></h2>
+    <span class="eyebrow">Big type, few words · Read from the door</span>
+  </div>
+  <p class="menu__note">Tossed in the wok every order, rolled fresh every morning, iced strong every afternoon.</p>
+  <div class="menu__cols">
+    <div class="cat cat--woks">
+      <div class="cat__title">Woks</div>
+      <div class="cat__sub">tossed to order. always.</div>
+      <div class="item"><div><div class="n">Chicken Teriyaki</div><div class="d">soy · ginger · sesame</div></div><div class="p">£12</div></div>
+      <div class="item"><div><div class="n">Spicy Beef &amp; Pepper</div><div class="d">chili · garlic · scallion</div></div><div class="p">£14</div></div>
+      <div class="item"><div><div class="n">Veg Wok of the Day</div><div class="d">ask the kitchen</div></div><div class="p">£11</div></div>
+      <div class="item"><div><div class="n">Prawn Pad Thai</div><div class="d">tamarind · peanut · lime</div></div><div class="p">£14</div></div>
+      <div class="item"><div><div class="n">SUME House Wok</div><div class="d">chef's pick. trust us.</div></div><div class="p">£15</div></div>
+    </div>
+    <div class="cat cat--sushi">
+      <div class="cat__title">Sushi</div>
+      <div class="cat__sub">rolled this morning.</div>
+      <div class="item"><div><div class="n">Salmon Nigiri · 4 pc</div><div class="d">scotland · cured 12h</div></div><div class="p">£8</div></div>
+      <div class="item"><div><div class="n">Tuna Avocado Roll</div><div class="d">8 pc · sesame outside</div></div><div class="p">£10</div></div>
+      <div class="item"><div><div class="n">Spicy Salmon Roll</div><div class="d">8 pc · sriracha mayo</div></div><div class="p">£10</div></div>
+      <div class="item"><div><div class="n">Veggie Roll</div><div class="d">cucumber · avocado · carrot</div></div><div class="p">£8</div></div>
+      <div class="item"><div><div class="n">Chef's Tray of 12</div><div class="d">whatever we rolled today</div></div><div class="p">£22</div></div>
+    </div>
+    <div class="cat cat--matcha">
+      <div class="cat__title">Matcha</div>
+      <div class="cat__sub">ceremonial grade. iced.</div>
+      <div class="item"><div><div class="n">Iced Matcha</div><div class="d">oat · whole · almond</div></div><div class="p">£6</div></div>
+      <div class="item"><div><div class="n">Matcha Strawberry</div><div class="d">house signature</div></div><div class="p">£7</div></div>
+      <div class="item"><div><div class="n">Matcha Blueberry</div><div class="d">choose a side</div></div><div class="p">£7</div></div>
+      <div class="item"><div><div class="n">Hojicha Latte</div><div class="d">roasted · iced</div></div><div class="p">£6</div></div>
+      <div class="item"><div><div class="n">Yuzu Sparkling</div><div class="d">no caffeine, all attitude</div></div><div class="p">£5</div></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- LOYALTY -->
+<section class="loyalty" id="loyalty"><div class="wrap">
+  <div>
+    <span class="eyebrow" style="opacity:.7">Loyalty · Buy 8, get 1 free</span>
+    <h2>Eat eight,<span class="serif">get one free.</span></h2>
+    <p>One stamp per visit, no matter how much you order. Eight visits = one free item. Any item. Even the chef's tray.</p>
+    <a href="#visit" class="btn">Grab a card in store</a>
+  </div>
+  <div class="card">
+    <div class="top"><span>Stamp every visit ↓</span><span>Visit 8 = Free</span></div>
+    <div class="stamps">
+      <div class="slot">01</div><div class="slot">02</div><div class="slot">03</div><div class="slot">04</div>
+      <div class="slot">05</div><div class="slot">06</div><div class="slot">07</div>
+      <div class="slot free">FREE<em>any item</em></div>
+    </div>
+    <div class="bot">SUME · one card · one customer</div>
+  </div>
+</div></section>
+
+<!-- VISIT -->
+<section class="visit" id="visit"><div class="wrap">
+  <span class="eyebrow">Store · From street to counter</span>
+  <h2>Come <span class="serif">say hi.</span></h2>
+  <div class="grid">
+    <div class="blk">
+      <h3>Where</h3>
+      <p class="big">Unit 04<br>London</p>
+      <p style="opacity:.7;margin-top:10px">Storefront address — drop your exact unit &amp; street here.</p>
+    </div>
+    <div class="blk">
+      <h3>Hours · Open 11—22 daily</h3>
+      <div class="hours">
+        <div class="day"><span>Mon–Thu</span><span>11:00 — 22:00</span></div>
+        <div class="day"><span>Fri–Sat</span><span>11:00 — 23:00</span></div>
+        <div class="day"><span>Sunday</span><span>12:00 — 21:00</span></div>
+      </div>
+    </div>
+    <div class="blk">
+      <h3>Order &amp; follow</h3>
+      <p style="line-height:2"><a href="#" style="color:var(--orange)">Order online ↗</a><br><a href="#" style="color:var(--orange)">@sume on Instagram ↗</a><br><a href="mailto:hello@sume.example">hello@sume.example</a></p>
+    </div>
+  </div>
+</div></section>
+
+<!-- FOOTER -->
+<footer class="foot"><div class="wrap">
+  <div class="top">
+    <div>
+      <div class="brand">SUME</div>
+      <div class="sub">Noodle &amp; Sushi Bar · See you tomorrow.</div>
+    </div>
+    <div class="links">
+      <a href="#story">Story</a><a href="#menu">Menu</a><a href="#loyalty">Loyalty</a><a href="#visit">Visit</a>
+    </div>
+  </div>
+  <div class="legal">
+    <span>© 2024–2025 SUME · Made today, eaten today.</span>
+    <span>Matcha now, think later. · Sue us.</span>
+  </div>
+</div></footer>
+
+</body>
+</html>

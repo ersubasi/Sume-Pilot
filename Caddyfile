@@ -1,0 +1,8 @@
+# Bind to Railway's $PORT (fallback 8080 for local runs).
+:{$PORT:8080} {
+	root * /srv
+	encode gzip
+	file_server
+	# Single-page: fall back to index.html for unknown paths.
+	try_files {path} /index.html
+}
